@@ -17,6 +17,11 @@ namespace SandOfDuat
             {
                 triggerEnterEvent?.Invoke();
             }
+
+            if (other.gameObject.CompareTag("Heart"))
+            {
+                triggerEnterEvent?.Invoke();
+            }
         }
 
         private void OnTriggerStay(Collider other)
