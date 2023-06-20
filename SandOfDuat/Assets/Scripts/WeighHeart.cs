@@ -8,7 +8,13 @@ namespace SandOfDuat
     {
         //Weighing Variables
         private bool ritualStarted;
+        private bool ritualEnded;
         private int RadNum;
+
+        //Scale Variables 
+        [SerializeField] ScaleState scaleScript; 
+        public GameObject scale;
+        private Animator scaleAnimator; 
 
         //Fade Variables
         public float fadeDuration = 2;
@@ -19,7 +25,9 @@ namespace SandOfDuat
         private void Start()
         {
             rend = GetComponent<Renderer>();
+            scaleAnimator = scale.GetComponent<Animator>();
         }
+
 
         public void WeighingHeart()
         {
@@ -31,16 +39,37 @@ namespace SandOfDuat
                 if (RadNum == 0)
                 {
                     Debug.Log("You died AGAIN! Bye bye...");
-                    FadeOut(fadeColorDead);
+                    scaleAnimator.Play("Heavy_Right");
                 } 
-                else if ( RadNum == 1)
+                else if (RadNum == 1)
                 {
                     Debug.Log("You're still part of the live, laugh, love community...");
-                    FadeOut(fadeColorAlive);
+                    scaleAnimator.Play("Heavy_Left");
                 } 
                 else
                 {
                     Debug.Log("Something went horribly wrong!");
+                }
+            }
+        }
+
+        private void Update()
+        {
+            if(ritualStarted && !ritualEnded)
+            {
+                if(scaleScript.animationFinished)
+                {
+                ritualEnded = true; 
+
+                    if (RadNum == 0)
+                    {
+                        FadeOut(fadeColorDead);
+                    } 
+
+                    if (RadNum == 1)
+                    {
+                        FadeOut(fadeColorAlive);
+                    }
                 }
             }
         }
