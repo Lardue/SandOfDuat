@@ -1037,7 +1037,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212848884}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.5, y: -98.8, z: -2}
   m_LocalScale: {x: 0.135, y: 1, z: 0.24000011}
   m_ConstrainProportionsScale: 0
@@ -1049,7 +1049,7 @@ Transform:
   - {fileID: 279355359}
   m_Father: {fileID: 1888733624}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &265616620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 712389834947337374, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
@@ -1062,6 +1062,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 712389834759889010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &265616622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265616620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565cf0d7716f0994891b265671639d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportationTarget: {fileID: 1556163285}
+  player: {fileID: 265616620}
 --- !u!1 &269941756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1247,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 712389834759889013}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1589978119}
         m_TargetAssemblyTypeName: SandOfDuat.PlayerBehaviour, Assembly-CSharp
         m_MethodName: goTroughPortal
@@ -1245,8 +1271,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1589978124}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 712389834759889013}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -3856,6 +3906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startInVR: 1
+  playingInVR: 0
   xrOrigin: {fileID: 265616620}
   desktopCharacter: {fileID: 1589978112}
 --- !u!1 &1556163285
@@ -4311,7 +4362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785704190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -24}
+  m_LocalPosition: {x: 0, y: 1.375, z: -30}
   m_LocalScale: {x: 0.135, y: 1, z: 0.24000017}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4330,7 +4381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888d9a2608160434dba408f85eb6ae54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCam: {fileID: 439215081}
+  detecter: {fileID: 1425284206}
+  vrCam: {fileID: 883453252}
+  desktopCam: {fileID: 439215081}
   portalDesert: {fileID: 1556163286}
   portalHFK: {fileID: 1947495642}
 --- !u!1 &1805278933
@@ -5697,32 +5750,32 @@ PrefabInstance:
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -99.5
       objectReference: {fileID: 0}
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
@@ -5732,17 +5785,17 @@ PrefabInstance:
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 712389834947337375, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
         type: 3}
@@ -5808,3 +5861,15 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+--- !u!114 &712389834759889013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 712389835333936243, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 712389834759889010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712389834759889011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

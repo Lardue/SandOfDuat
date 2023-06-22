@@ -6,23 +6,43 @@ namespace SandOfDuat
 {
     public class PortalCamera : MonoBehaviour
     {
-        public Transform playerCam;
+        [SerializeField] DetectVR detecter;
+
+        public Transform vrCam;
+        public Transform desktopCam;
         public Transform portalDesert;
         public Transform portalHFK;
 
+        private Transform playerCam;
         private Transform portalCam;
 
         private void Start()
         {
             portalCam = gameObject.GetComponent<Transform>();
+
+            if (detecter.playingInVR)
+            {
+                playerCam = vrCam;
+            } 
+            else
+            {
+                playerCam = desktopCam;
+            }
+
+            portalCam.position = new Vector3(portalCam.position.x, playerCam.position.y, portalCam.position.z);
         }
 
         private void Update()
         {
             Matrix4x4 m = portalDesert.localToWorldMatrix * portalHFK.worldToLocalMatrix * playerCam.localToWorldMatrix;
-            Quaternion q = m.rotation;
-            q.Set(0, q.y, q.z, q.w);
-            portalCam.SetPositionAndRotation(m.GetColumn(3), q);
+            
+            Vector4 newPos = m.GetColumn(3);
+            //newPos.Set(0, newPos.y, newPos.z, newPos.z);
+
+            Quaternion newRot = m.rotation;
+            newRot.Set(0, newRot.y, newRot.z, newRot.w);
+
+            portalCam.SetPositionAndRotation(newPos, newRot);
         }
     }
 }

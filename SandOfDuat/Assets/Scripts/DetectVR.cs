@@ -7,7 +7,8 @@ namespace SandOfDuat
 {
     public class DetectVR : MonoBehaviour
     {
-        public bool startInVR = true; 
+        public bool startInVR = true;
+        public bool playingInVR; 
 
         public GameObject xrOrigin;
         public GameObject desktopCharacter;
@@ -51,6 +52,7 @@ namespace SandOfDuat
             }
 
             Debug.Log("XRLoader is NOT null");
+            playingInVR = true; 
             xrOrigin.SetActive(true);
             desktopCharacter.SetActive(false);
         }
