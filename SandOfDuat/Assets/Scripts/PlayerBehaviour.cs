@@ -9,9 +9,15 @@ namespace SandOfDuat
         public GameObject teleportationTarget;
         public GameObject player;
 
+        public GameObject heart;
+
         public void goTroughPortal()
         {
             player.transform.position = teleportationTarget.transform.position;
+        }
+        public void ActivateHeart()
+        {
+            heart.SetActive(true);
         }
     }
 }

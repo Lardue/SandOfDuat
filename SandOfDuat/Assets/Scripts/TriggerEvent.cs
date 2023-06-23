@@ -11,16 +11,23 @@ namespace SandOfDuat
         public UnityEvent triggerStayEvent;
         public UnityEvent triggerExitEvent;
 
+        public bool isHand; 
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (!isHand)
             {
-                triggerEnterEvent?.Invoke();
+                if (other.gameObject.CompareTag("Player"))
+                {
+                    triggerEnterEvent?.Invoke();
+                }
             }
-
-            if (other.gameObject.CompareTag("Heart"))
+            else
             {
-                triggerEnterEvent?.Invoke();
+                if (other.gameObject.CompareTag("Heart"))
+                {
+                    triggerEnterEvent?.Invoke();
+                }
             }
         }
 
@@ -39,5 +46,6 @@ namespace SandOfDuat
                 triggerExitEvent?.Invoke();
             }
         }
+
     }
 }

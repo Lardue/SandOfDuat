@@ -7,17 +7,23 @@ namespace SandOfDuat
     public class HeartBehaviour : MonoBehaviour
     {
         public GameObject scalePan;
-        private Rigidbody rigidB;
 
-        private void Start()
-        {
-            rigidB = GetComponent<Rigidbody>(); 
-        }
+        private bool isGrabbed; 
 
         public void makeScaleParent()
         {
-            rigidB.useGravity = false;
+            this.GetComponent<Rigidbody>().useGravity = false;
             transform.SetParent(scalePan.transform);
+        }
+
+        public void heartIsGrabbed ()
+        {
+            if (!isGrabbed)
+            {
+                isGrabbed = true;
+                transform.SetParent(null);
+                this.GetComponent<Rigidbody>().useGravity = true;
+            }
         }
     }
 }
