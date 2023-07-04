@@ -40,7 +40,7 @@ namespace SandOfDuat
             //newPos.Set(0, newPos.y, newPos.z, newPos.z);
 
             Quaternion newRot = m.rotation;
-            newRot.Set(0, newRot.y, 0, newRot.w);
+            newRot.Set(0, 0, 0, 0);
 
             portalCam.SetPositionAndRotation(newPos, newRot);
         }
