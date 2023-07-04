@@ -1,0 +1,39 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Sandstone
+Ka 0.000000 0.000000 0.000000
+Kd 0.462745 0.317647 0.203922
+Ks 0.330000 0.330000 0.330000
+map_Kd Earthenware Pot/Sandstone.jpg
+
+newmtl Plaster_09__Clay_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.537255 0.352941 0.247059
+Ks 0.330000 0.330000 0.330000
+map_Kd Earthenware Pot/Plaster_09__Clay_1.png
+
+newmtl ForegroundColor
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Wood_Veneer_01
+Ka 0.000000 0.000000 0.000000
+Kd 0.470588 0.274510 0.145098
+Ks 0.330000 0.330000 0.330000
+map_Kd Earthenware Pot/Wood_Veneer_01.jpg
+
+newmtl Metal_Rough
+Ka 0.000000 0.000000 0.000000
+Kd 0.600000 0.615686 0.627451
+Ks 0.330000 0.330000 0.330000
+map_Kd Earthenware Pot/Metal_Rough.jpg
+
+newmtl Wood_Cherry_Original
+Ka 0.000000 0.000000 0.000000
+Kd 0.596078 0.337255 0.164706
+Ks 0.330000 0.330000 0.330000
+map_Kd Earthenware Pot/Wood_Cherry_Original.jpg
+
