@@ -11,7 +11,11 @@ namespace SandOfDuat
         public UnityEvent triggerStayEvent;
         public UnityEvent triggerExitEvent;
 
-        public bool isHand; 
+        public AudioSource soundEffect;
+        public bool isFirst; 
+        public bool isHand;
+
+        private bool soundPlayed;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -20,6 +24,15 @@ namespace SandOfDuat
                 if (other.gameObject.CompareTag("Player"))
                 {
                     triggerEnterEvent?.Invoke();
+
+                    if (isFirst && soundEffect != null)
+                    {
+                        if(!soundPlayed)
+                        {
+                            soundEffect.Play();
+                            soundPlayed = true;
+                        }
+                    }
                 }
             }
             else
@@ -44,6 +57,15 @@ namespace SandOfDuat
             if (other.gameObject.CompareTag("Player"))
             {
                 triggerExitEvent?.Invoke();
+
+                if (!isFirst && soundEffect != null)
+                {
+                    if (!soundPlayed)
+                    {
+                        soundEffect.Play();
+                        soundPlayed = true;
+                    }
+                }
             }
         }
 
