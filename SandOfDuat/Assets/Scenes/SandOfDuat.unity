@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.20461221, g: 0.14979988, b: 0.11563252, a: 1}
+  m_IndirectSpecularColor: {r: 0.2046127, g: 0.14980027, b: 0.11563267, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -648,7 +648,7 @@ MonoBehaviour:
   triggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1805278942}
+      - m_Target: {fileID: 1204711748}
         m_TargetAssemblyTypeName: SandOfDuat.HeartBehaviour, Assembly-CSharp
         m_MethodName: heartIsGrabbed
         m_Mode: 1
@@ -2505,6 +2505,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 712389834759889010}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &894751006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6650304018865234114, guid: 6e18657595fb1b94a91cafe41dd65d6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 365589273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &894751010
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894751006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1215230190209833024, guid: 6e18657595fb1b94a91cafe41dd65d6f, type: 3}
+--- !u!1 &909518127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6680554165636607182, guid: 6e18657595fb1b94a91cafe41dd65d6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 365589273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &909518131
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909518127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7856738817246405889, guid: 6e18657595fb1b94a91cafe41dd65d6f, type: 3}
 --- !u!114 &928291901 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 712389834047922099, guid: fe90caa76bf9a3f4389dfbc827b51bb2,
@@ -4275,7 +4315,7 @@ MonoBehaviour:
   triggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1805278942}
+      - m_Target: {fileID: 1204711748}
         m_TargetAssemblyTypeName: SandOfDuat.HeartBehaviour, Assembly-CSharp
         m_MethodName: heartIsGrabbed
         m_Mode: 1
@@ -5755,7 +5795,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 03d16463c1253a04e9fb9d3bd82fafa0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.473335
+      value: -33.86
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03d16463c1253a04e9fb9d3bd82fafa0,
         type: 3}
