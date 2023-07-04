@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace SandOfDuat
 {
@@ -22,8 +23,10 @@ namespace SandOfDuat
             {
                 isGrabbed = true;
                 transform.SetParent(null);
+                this.GetComponent<Rigidbody>().useGravity = false;
                 this.GetComponent<Rigidbody>().useGravity = true;
             }
         }
+
     }
 }
