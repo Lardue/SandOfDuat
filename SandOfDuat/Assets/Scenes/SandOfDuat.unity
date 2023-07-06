@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.23639993, g: 0.18375126, b: 0.1476095, a: 1}
+  m_IndirectSpecularColor: {r: 0.23639913, g: 0.18375073, b: 0.14760914, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -270,34 +270,10 @@ MonoBehaviour:
   triggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1204711748}
-        m_TargetAssemblyTypeName: SandOfDuat.HeartBehaviour, Assembly-CSharp
-        m_MethodName: makeScaleParent
+      - m_Target: {fileID: 745920868}
+        m_TargetAssemblyTypeName: SandOfDuat.GameController, Assembly-CSharp
+        m_MethodName: StartCeremony
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1316428422}
-        m_TargetAssemblyTypeName: SandOfDuat.WeighHeart, Assembly-CSharp
-        m_MethodName: WeighingHeart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 37057230}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3537,6 +3513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 745920867}
+  - component: {fileID: 745920868}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -3560,6 +3537,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &745920868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745920866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ee3d2860bd7bd4793bb4319cd5e988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartVR: {fileID: 1204711748}
+  heartDesktop: {fileID: 1805278942}
+  faderVR: {fileID: 1316428422}
+  faderDesktop: {fileID: 1318981998}
 --- !u!1 &750480192
 GameObject:
   m_ObjectHideFlags: 0
@@ -7805,6 +7798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startInVR: 1
   playingInVR: 0
+  controllerScript: {fileID: 745920866}
   xrOrigin: {fileID: 265616620}
   desktopCharacter: {fileID: 1589978112}
 --- !u!1 &1432052836
