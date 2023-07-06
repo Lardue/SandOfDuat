@@ -23,7 +23,6 @@ namespace SandOfDuat
             {
                 isGrabbed = true;
                 transform.SetParent(null);
-                this.GetComponent<Rigidbody>().useGravity = false;
                 this.GetComponent<Rigidbody>().useGravity = true;
             }
         }
