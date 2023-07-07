@@ -11,7 +11,11 @@ namespace SandOfDuat
         public WeighHeart faderVR;
         public WeighHeart faderDesktop;
 
-        public AudioSource coinFlip; 
+        public AudioSource heartbeatVR;
+        public AudioSource heartbeatDesktop;
+
+        public AudioSource coinFlip;
+
 
         private GameObject player;
         private bool vrActive;
@@ -28,6 +32,7 @@ namespace SandOfDuat
             if (vrActive)
             {
                 heartVR.makeScaleParent();
+                StartCoroutine(FadeOut(heartbeatVR, 3f));
 
                 if(coinCollected)
                 {
@@ -39,6 +44,7 @@ namespace SandOfDuat
             else
             {
                 heartDesktop.makeScaleParent();
+                StartCoroutine(FadeOut(heartbeatDesktop, 3f));
 
                 if (coinCollected)
                 {
@@ -55,6 +61,42 @@ namespace SandOfDuat
             Debug.Log("Coin Collected, Biatch.");
         }
 
+        public void StartHeart ()
+        {
+            if (vrActive)
+            {
+                StartCoroutine(FadeIn(heartbeatVR, 3f));
+            }
+            else
+            {
+                StartCoroutine(FadeIn(heartbeatDesktop, 3f));
+            }
+        }
 
+        public IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
+        {
+
+            while (audioSource.volume < 0.75f)
+            {
+                audioSource.volume += .15f * Time.deltaTime / FadeTime;
+
+                yield return null;
+            }
+        }
+
+        public IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+        {
+            float startVolume = audioSource.volume;
+
+            while (audioSource.volume > 0)
+            {
+                audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
+                yield return null;
+            }
+
+            audioSource.Stop();
+            audioSource.volume = startVolume;
+        }
     }
 }

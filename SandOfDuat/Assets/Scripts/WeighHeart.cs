@@ -156,5 +156,6 @@ namespace SandOfDuat
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+      
     }
 }
