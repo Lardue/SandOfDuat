@@ -65,7 +65,7 @@ namespace SandOfDuat
         {
             if (vrActive)
             {
-                StartCoroutine(FadeIn(heartbeatVR, 3f));
+                StartCoroutine(FadeIn(heartbeatVR, 1f));
             }
             else
             {
@@ -76,12 +76,14 @@ namespace SandOfDuat
         public IEnumerator FadeIn(AudioSource audioSource, float FadeTime)
         {
 
-            while (audioSource.volume < 0.75f)
+            while (audioSource.volume < 0.5f)
             {
-                audioSource.volume += .15f * Time.deltaTime / FadeTime;
+                audioSource.volume += .5f * Time.deltaTime / FadeTime;
 
                 yield return null;
             }
+
+            Debug.Log("Done");
         }
 
         public IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
