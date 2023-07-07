@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SandOfDuat
 {
@@ -18,6 +19,14 @@ namespace SandOfDuat
             if(Input.GetMouseButtonDown(1))
             {
                 handAnimator.Play("Grab_Heart");
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Coin"))
+            {
+                Debug.Log("Heloooooo");
             }
         }
     }

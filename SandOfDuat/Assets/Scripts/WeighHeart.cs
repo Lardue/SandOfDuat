@@ -10,7 +10,7 @@ namespace SandOfDuat
         //Weighing Variables
         private bool ritualStarted;
         private bool ritualEnded;
-        private int RadNum;
+        private int radNum;
 
         //Scale Variables 
         [SerializeField] ScaleState scaleScript;
@@ -34,26 +34,36 @@ namespace SandOfDuat
         }
 
 
-        public void WeighingHeart()
+        public void WeighingHeart(bool pCoin)
         {
             if (!ritualStarted)
             {
                 ritualStarted = true;
-                RadNum = Random.Range(0, 2);
 
-                if (RadNum == 0)
+                if (pCoin)
                 {
-                    Debug.Log("You died AGAIN! Bye bye...");
-                    scaleAnimator.Play("Heavy_Right");
-                }
-                else if (RadNum == 1)
-                {
-                    Debug.Log("You're still part of the live, laugh, love community...");
+                    Debug.Log("What a sweet day to be rich and priviledged!");
+                    radNum = 1;
                     scaleAnimator.Play("Heavy_Left");
                 }
                 else
                 {
-                    Debug.Log("Something went horribly wrong!");
+                    radNum = Random.Range(0, 2);
+
+                    if (radNum == 0)
+                    {
+                        Debug.Log("You died AGAIN! Bye bye...");
+                        scaleAnimator.Play("Heavy_Right");
+                    }
+                    else if (radNum == 1)
+                    {
+                        Debug.Log("You're still part of the live, laugh, love community...");
+                        scaleAnimator.Play("Heavy_Left");
+                    }
+                    else
+                    {
+                        Debug.Log("Something went horribly wrong!");
+                    }
                 }
             }
         }
@@ -69,18 +79,18 @@ namespace SandOfDuat
                 }
             }
         }
-       
+
         private IEnumerator EndGame()
         {
             yield return new WaitForSeconds(3f);
 
-            if (RadNum == 0)
+            if (radNum == 0)
             {
                 FadeOut(fadeColorDead);
                 StartCoroutine(PlayEndSound(5));
             }
 
-            if (RadNum == 1)
+            if (radNum == 1)
             {
                 FadeOut(fadeColorAlive);
                 StartCoroutine(PlayEndSound(5));
@@ -126,13 +136,13 @@ namespace SandOfDuat
         {
             yield return new WaitForSeconds(pSeconds);
 
-            if (RadNum == 0)
+            if (radNum == 0)
             {
                 soundDeath.Play();
                 StartCoroutine(ResetGame(40));
             }
 
-            if (RadNum == 1)
+            if (radNum == 1)
             {
                 soundAfterlife.Play();
                 StartCoroutine(ResetGame(40));
