@@ -9,8 +9,7 @@ namespace SandOfDuat
     {
         //Weighing Variables
         private bool ritualStarted;
-        private bool ritualEnded;
-        private int radNum=1;
+        private int radNum;
 
         //Scale Variables 
         [SerializeField] ScaleState scaleScript;
@@ -65,13 +64,15 @@ namespace SandOfDuat
                         Debug.Log("Something went horribly wrong!");
                     }
                 }
+
+                scaleScript.SetRandom(radNum);
             }
         }
 
 
-        public void StartEnd()
+        public void StartEnd(int pRandom)
         {
-            Debug.Log(radNum);
+            radNum = pRandom;
             StartCoroutine(EndGame());
         }
 

@@ -6,23 +6,27 @@ namespace SandOfDuat
 {
     public class ScaleState : MonoBehaviour
     {
-        public bool animationFinished = false;
         public DetectVR detecterScript;
+
+        private int random; 
 
         public WeighHeart faderVR;
         public WeighHeart faderDesktop;
 
+        public void SetRandom(int pRandom)
+        {
+            random = pRandom;
+        }
+
         public void updateStatetoFinished()
         {
-            animationFinished = true;
-
             if (detecterScript.playingInVR)
             {
-                faderVR.StartEnd();
+                faderVR.StartEnd(random);
             } 
             else
             {
-                faderDesktop.StartEnd();
+                faderDesktop.StartEnd(random);
             }
 
         }
