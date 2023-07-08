@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.23639913, g: 0.18375073, b: 0.14760914, a: 1}
+  m_IndirectSpecularColor: {r: 0.23639993, g: 0.18375126, b: 0.1476095, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11980,6 +11980,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47bac8ed8451b594e99aae2e99cc23b1,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47bac8ed8451b594e99aae2e99cc23b1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47bac8ed8451b594e99aae2e99cc23b1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47bac8ed8451b594e99aae2e99cc23b1,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -11996,7 +12011,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 47bac8ed8451b594e99aae2e99cc23b1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47bac8ed8451b594e99aae2e99cc23b1,
         type: 3}
@@ -12011,7 +12026,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 47bac8ed8451b594e99aae2e99cc23b1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47bac8ed8451b594e99aae2e99cc23b1,
         type: 3}
@@ -12026,7 +12041,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 47bac8ed8451b594e99aae2e99cc23b1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 47bac8ed8451b594e99aae2e99cc23b1,
         type: 3}
@@ -14204,6 +14219,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -14220,7 +14250,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
         type: 3}
@@ -14235,7 +14265,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
         type: 3}
@@ -14250,7 +14280,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cfe4b8c4bb7dd074fa1451a797ea4893,
         type: 3}
