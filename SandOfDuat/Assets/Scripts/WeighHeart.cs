@@ -75,6 +75,7 @@ namespace SandOfDuat
                 if (scaleScript.animationFinished)
                 {
                     ritualEnded = true;
+                    Debug.Log("End is starting");
                     StartCoroutine(EndGame());
                 }
             }
@@ -84,6 +85,7 @@ namespace SandOfDuat
         {
             yield return new WaitForSeconds(3f);
 
+            Debug.Log("Things should be happening??????");
             if (radNum == 0)
             {
                 FadeOut(fadeColorDead);
