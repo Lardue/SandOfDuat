@@ -11,6 +11,7 @@ namespace SandOfDuat
         public void updateStatetoFinished()
         {
             animationFinished = true;
+            Debug.Log("Scale macht ihr Ding");
         }
     }
 }

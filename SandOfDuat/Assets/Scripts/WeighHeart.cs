@@ -72,6 +72,7 @@ namespace SandOfDuat
         {
             if (ritualStarted && !ritualEnded)
             {
+                Debug.Log("Level 1");
                 if (scaleScript.animationFinished)
                 {
                     ritualEnded = true;
