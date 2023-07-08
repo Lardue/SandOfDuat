@@ -16,8 +16,10 @@ namespace SandOfDuat
 
         public AudioSource coinFlip;
 
+        public ScaleState scaleScript; 
 
         private GameObject player;
+
         private bool vrActive;
         private bool coinCollected;
 

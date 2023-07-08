@@ -7775,6 +7775,7 @@ MonoBehaviour:
   heartbeatVR: {fileID: 1204711754}
   heartbeatDesktop: {fileID: 1805278943}
   coinFlip: {fileID: 911880320}
+  scaleScript: {fileID: 0}
 --- !u!1 &750480192
 GameObject:
   m_ObjectHideFlags: 0
@@ -9077,6 +9078,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationFinished: 0
+  detecterScript: {fileID: 1425284206}
+  faderVR: {fileID: 1316428422}
+  faderDesktop: {fileID: 1318981998}
 --- !u!4 &883453252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 712389835016517048, guid: fe90caa76bf9a3f4389dfbc827b51bb2,

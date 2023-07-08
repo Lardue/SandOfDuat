@@ -68,25 +68,17 @@ namespace SandOfDuat
             }
         }
 
-        private void Update()
+
+        public void StartEnd()
         {
-            if (ritualStarted && !ritualEnded)
-            {
-                Debug.Log("Level 1");
-                if (scaleScript.animationFinished)
-                {
-                    ritualEnded = true;
-                    Debug.Log("End is starting");
-                    StartCoroutine(EndGame());
-                }
-            }
+            StartCoroutine(EndGame());
         }
+
 
         private IEnumerator EndGame()
         {
             yield return new WaitForSeconds(3f);
 
-            Debug.Log("Things should be happening??????");
             if (radNum == 0)
             {
                 FadeOut(fadeColorDead);
