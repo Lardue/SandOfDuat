@@ -68,7 +68,7 @@ namespace SandOfDuat
             }
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             if (ritualStarted && !ritualEnded)
             {
